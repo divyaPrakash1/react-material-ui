@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { Button } from '@mui/material';
+import { Button, ButtonGroup, } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import { useState } from 'react';
@@ -12,7 +12,7 @@ function App() {
   const customMe = () => {
     // alert(123123)
     setColor('secondary')
-    setDisable(true)
+    // setDisable(true)
   }
   return (
     <div className="App">
@@ -33,14 +33,28 @@ function App() {
       <Button variant="contained" endIcon={<SendIcon />}>
         Send
       </Button> */}
-      <Button
-        color={color}
-        variant='contained'
-        onClick={() => customMe()}
-        disabled={disable}
-        startIcon={<DeleteIcon />}
-        endIcon={<SendIcon />}
-      >Click Me</Button>
+      <ButtonGroup variant='outlined'
+        orientation='vertical'>
+
+        <Button
+          color={color}
+          variant='contained'
+          onClick={() => customMe()}
+          disabled={disable}
+        >One</Button>
+        <Button
+          color={color}
+          variant='contained'
+          onClick={() => customMe()}
+          disabled={disable}
+        >Two</Button>
+        <Button
+          color={color}
+          variant='contained'
+          onClick={() => customMe()}
+          disabled={disable}
+        >Three</Button>
+      </ButtonGroup>
     </div>
   );
 }
